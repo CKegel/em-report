@@ -1,8 +1,8 @@
 services:
-  front:
+  web:
     build: .
     ports:
-      - "8080:8080"
+      - "3000:3000"
     volumes:
       - .:/app
     links:
@@ -12,7 +12,18 @@ services:
     ports: 
        - '5432:5432'
     volumes:
-      - ~/apps/postgres:/var/lib/postgresql/data
+      - ./database:/var/lib/postgresql/data
     environment:
     - POSTGRES_USER=root
-    - POSTGRES_PASSWORD=hackRPIX  
+    - POSTGRES_PASSWORD=hackRPIX
+  dbadmin:
+    image: dpage/pgadmin4
+    ports:
+      - "8080:80"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=hackRPIX
+    volumes:
+      - ./dbadmin:/var/lib/pgadmin
+    depends_on:
+      - database
