@@ -1,6 +1,17 @@
 <script lang="ts">
     import type {PageData} from './$types';
-    
+
+    var formData = JSON.stringify((document.querySelector(#patientinformation)).serializeArray());
+    const url = 'localhost:5000'
+    const response = await fetch(url, {
+        method:'POST',
+        headers:{
+
+        },
+        body:{formData}}
+    );
+    const responseData = await response.json();
+
     export let data: PageData;
 </script>
 
@@ -8,7 +19,7 @@
 
 <p> Input Patient Information</p>
 
-<form>
+<form id="patientinformation">
 <label for="ptfirstname"> Patient Name</label> <br>
 <input type="text" id="ptfirstname"> <br>
 <input type="text" id="ptlastname"> <br>
@@ -33,5 +44,5 @@
 <label for="hospitaldestination"> Hospital Destination </label>
 <input type="text" id="hospitaldestination"> <br>
 
-<button id="notifyButton"> Notify </button>
 </form>
+<button id="notifyButton"> Notify </button>
