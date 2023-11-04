@@ -1,17 +1,6 @@
 <script lang="ts">
     import type {PageData} from './$types';
 
-    var formData = JSON.stringify((document.querySelector(#patientinformation)).serializeArray());
-    const url = 'localhost:5000'
-    const response = await fetch(url, {
-        method:'POST',
-        headers:{
-
-        },
-        body:{formData}}
-    );
-    const responseData = await response.json();
-
     export let data: PageData;
 </script>
 
