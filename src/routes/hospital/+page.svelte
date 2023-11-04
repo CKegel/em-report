@@ -1,8 +1,8 @@
 <script lang="ts">
-    // import type { PageData } from './$types';
+    import type {PageData} from './$types';
     import {MapLibre} from 'svelte-maplibre';
 
-    // export let data: PageData;
+    export let data: PageData;
 </script>
 
 <body class="container-fluid">
