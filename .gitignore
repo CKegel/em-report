@@ -1,8 +1,8 @@
 .DS_Store
 node_modules
 /build
-/pgadmin
-/postgres
+/dbadmin
+/database
 /.svelte-kit
 /package
 .env
