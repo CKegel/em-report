@@ -10,11 +10,30 @@
     <div class="container-fluid" >
         
         <h1 class="mb-2" style="font-size: 1.2em;"> Incoming Patients</h1>
-        <ul>
-        {#each data.rows as row}
-         <li><b>Name:</b> { row.first } {row.last}, <b>Age:</b> {row.age}, <b>Category:</b> { row.type }</li>
+        <table role="grid">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Category</th>
+                <th>ETA</th>
+                <th> Actions </th>
+            </tr>
+        {#each data.rows as {first, last, age, type, cc, acknowledged, ETA}}
+            <tr>
+                <td>{first} {last}</td>
+                <td>{age}</td>
+                <td>{type}</td>
+                <td>{ETA}</td>
+                <td> 
+                {#if acknowledged}
+                    <button class="secondary">Details</button>
+                {:else}
+                    <button>Aknowledge</button>
+                {/if}
+                </td>
+            </tr>
         {/each}
-        </ul>
+        </table>
     </div>
 
     <!-- credit: MapLibre mapping libre Svelte wrapper -->
