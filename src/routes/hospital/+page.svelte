@@ -13,10 +13,9 @@
     <div class="container-fluid" >
         
         <h1 class="mb-2" style="font-size: 1.2em;"> Incoming Patients</h1>
-        <table> 
-            <tr>
-            </tr>
-        </table>
+        <ul>
+            <li> {data} </li>
+        </ul>
     </div>
 
     <!-- credit: MapLibre mapping libre Svelte wrapper -->
