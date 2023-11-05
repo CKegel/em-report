@@ -8,7 +8,6 @@
 <main>
     <h1 class="mb-2" style="font-size: 2.5em; text-align: center;"> Hospital Dashboard</h1>
     <div class="container-fluid" >
-        
         <h1 class="mb-2" style="font-size: 1.2em;"> Incoming Patients</h1>
         <table role="grid">
             <tr>
@@ -16,7 +15,7 @@
                 <th>Age</th>
                 <th>Category</th>
                 <th>ETA</th>
-                <th> Actions </th>
+                <th>Actions</th>
             </tr>
         {#each data.rows as {first, last, age, type, cc, acknowledged, ETA}}
             <tr>
