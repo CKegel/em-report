@@ -12,6 +12,6 @@ export const load = (async () => {
     dbconn.release()
     console.log(err)
     }
-    console.log(result.rows);
-    return { rows: result.rows, length: result.rows.length };
+    console.log(result!.rows);
+    return { rows: result!.rows, length: result!.rows.length };
 }) satisfies PageServerLoad;

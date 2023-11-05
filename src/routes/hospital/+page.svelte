@@ -9,7 +9,7 @@
     <h1 class="mb-2" style="font-size: 2.5em; text-align: center;"> Hospital Dashboard</h1>
     <div class="container-fluid" >
         
-        <h1 class="mb-2" style="font-size: 1.2em;"> Incoming Patients</h1>
+        <h1 style="font-size: 1.2em;"> Incoming Patients</h1>
         <ul>
         {#each data.rows as row}
          <li><b>Name:</b> { row.first } {row.last}, <b>Age:</b> {row.age}, <b>Category:</b> { row.type }</li>

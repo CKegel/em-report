@@ -7,7 +7,7 @@
 <div class="container-fluid">
     <h1 style="padding-top: 20px; text-align: center">EMS Report</h1>
     <div class="container-fluid mx-3">
-        <form method="POST" id="patientinformation" class="formClass">
+        <form id="patientinformation" class="formClass">
             <div class="grid">
                 <div>
                     <label for="ptfirstname"> First</label>
