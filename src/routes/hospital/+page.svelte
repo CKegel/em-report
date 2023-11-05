@@ -2,9 +2,6 @@
     import type {PageData} from './$types';
     import {MapLibre} from 'svelte-maplibre';
     export let data: PageData;
-
-    
-
 </script>
 
 <body class="container-fluid">
@@ -14,7 +11,7 @@
         
         <h1 class="mb-2" style="font-size: 1.2em;"> Incoming Patients</h1>
         <ul>
-            <li> {data} </li>
+            <li>{data}</li>
         </ul>
     </div>
 
