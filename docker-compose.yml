@@ -7,15 +7,6 @@ services:
       - .:/app:z
     links:
       - database:db
-  database:
-    image: postgres:latest
-    ports: 
-       - '5432:5432'
-    volumes:
-      - ./database:/var/lib/postgresql/data:z
-    environment:
-    - POSTGRES_USER=root
-    - POSTGRES_PASSWORD=hackRPIX
   dbadmin:
     image: dpage/pgadmin4
     ports:
@@ -27,3 +18,13 @@ services:
       - ./dbadmin:/var/lib/pgadmin:z
     depends_on:
       - database
+  database:
+    image: postgres:latest
+    ports: 
+       - '5432:5432'
+    volumes:
+      - ./database:/var/lib/postgresql/data:z
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    environment:
+    - POSTGRES_USER=root
+    - POSTGRES_PASSWORD=hackRPIX
