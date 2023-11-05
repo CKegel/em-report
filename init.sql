@@ -1,8 +1,8 @@
 -- Create database for app
 
-DROP DATABASE IF EXISTS emreport;
+DROP DATABASE IF EXISTS em-report;
 
-CREATE DATABASE emreport
+CREATE DATABASE em-report
     WITH
     OWNER = root
     ENCODING = 'UTF8'
@@ -14,7 +14,7 @@ CREATE DATABASE emreport
     IS_TEMPLATE = False;
 
 
-\c emreport;
+\c em-report;
 
  -- Create Case Data Table
 CREATE TABLE IF NOT EXISTS public.cases

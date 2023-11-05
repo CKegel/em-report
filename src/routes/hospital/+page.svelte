@@ -1,7 +1,7 @@
 <script lang="ts">
     import type {PageData} from './$types';
     import {MapLibre} from 'svelte-maplibre';
-    export let data: PageData;
+    export let data;
 </script>
 
 <body class="container-fluid">
@@ -11,7 +11,9 @@
         
         <h1 class="mb-2" style="font-size: 1.2em;"> Incoming Patients</h1>
         <ul>
-            <li>{data}</li>
+        {#each data.rows as row}
+         <li><b>Name:</b> { row.first } {row.last}, <b>Age:</b> {row.age}, <b>Category:</b> { row.type }</li>
+        {/each}
         </ul>
     </div>
 
